@@ -1,0 +1,7 @@
+@use "../../styles/settings/variables";
+
+header {
+    background-color: variables.$background-light-color;
+    color: #fff;
+    padding: variables.$spacing-lg variables.$spacing-sm;
+}

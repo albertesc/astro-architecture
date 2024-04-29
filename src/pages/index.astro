@@ -1,0 +1,118 @@
+---
+import data from "@data/pages.json";
+
+const pages = data.pages;
+
+const href = Astro.url.href;
+console.log(href);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <script is:inline src="https://cdn.tailwindcss.com"></script>
+    <script is:inline>
+      tailwind.config = {
+        theme: {
+          container: {
+            center: true,
+            padding: "1rem",
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <main class="container max-w-4xl py-40">
+      <h1 class="text-3xl font-semibold text-gray-800">List of pages</h1>
+
+      <p
+        class="mt-3 text-gray-500 text-sm p-3 bg-gray-50 border border-gray-100 rounded-md"
+      >
+        En esta pantalla podrás crear un listado de todas pantallas del proyecto
+        e informar del estado en que se encuentran. Para actualizar la
+        información modifica el archivo <span class="font-bold">pages.json</span
+        > en la carpeta <span class="font-bold">/src/data/</span>. Recuerda
+        mantener la información actualizada.
+      </p>
+
+      <ul role="list" class="divide-y divide-gray-100 mt-4">
+        {
+          pages.map((page) => (
+            <li class="flex justify-between w-full gap-x-6 py-3">
+              <div class="flex min-w-0 gap-x-4">
+                <div class="min-w-0 flex-auto">
+                  <a
+                    href={page.slug}
+                    target="_blank"
+                    class="text-sm font-semibold leading-6 text-gray-800 hover:text-gray-950 hover:underline"
+                  >
+                    {page.title}
+                  </a>
+                  <p class="mt-3 truncate text-xs leading-5 text-gray-500">
+                    {page.path}
+                  </p>
+                </div>
+              </div>
+              <div class="shrink-0 flex flex-col items-end">
+                <a
+                  href={page.slug}
+                  target="_blank"
+                  class="text-sm leading-6 text-gray-900 flex items-center gap-2 hover:underline"
+                >
+                  {`${href}${page.file}`}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-4 h-4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                    />
+                  </svg>
+                </a>
+                <div class="mt-3 flex items-center gap-2">
+                  {page.accessibility ? (
+                    <a
+                      href={`/accessibility${page.slug}.html`}
+                      target="_blank"
+                      class="rounded-md py-1 px-2 text-xs font-medium ring-1 ring-inset text-green-700 bg-green-50 ring-green-600/10"
+                    >
+                      Accessibility
+                    </a>
+                  ) : (
+                    <a
+                      href={`/accessibility${page.slug}.html`}
+                      target="_blank"
+                      class="rounded-md py-1 px-2 text-xs font-medium ring-1 ring-inset text-red-700 bg-red-50 ring-red-600/10"
+                    >
+                      No accessibility
+                    </a>
+                  )}
+
+                  {page.status === "in-progress" ? (
+                    <div class="rounded-md py-1 px-2 text-xs font-medium ring-1 ring-inset text-blue-700 bg-blue-50 ring-blue-600/10">
+                      In-progress
+                    </div>
+                  ) : (
+                    <div class="rounded-md py-1 px-2 text-xs font-medium ring-1 ring-inset text-green-700 bg-green-50 ring-green-600/10">
+                      Done
+                    </div>
+                  )}
+                </div>
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+    </main>
+  </body>
+</html>

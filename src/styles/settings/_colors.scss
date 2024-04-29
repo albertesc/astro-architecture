@@ -1,0 +1,39 @@
+$_camellia-rose: #d0315d;
+$_maroon-light: #a61442;
+$_purplish-blue: #5E48E8;
+$_blue-purple: #5028C6;
+$_photon-barrier: #8CE0F3;
+$_nero: #0a0a0a;
+$_fiftieth-shade-of-grey: #3a3a3a;
+$_brainstem-grey: #767676;
+$_doctor: #a3a3a3;
+$_white: #FFFFFF;
+$_tokiwa-green: #007B40;
+$_vivaldi-red: #F03D3E;
+$_placebo-red: #f1b5b5;
+
+// Variables
+$primary-color: $_camellia-rose;
+$primary-dark-color: $_maroon-light;
+$alternate-color: $_purplish-blue;
+$alternate-dark-color: $_blue-purple;
+$highlight-color: $_photon-barrier;
+$success-color: $_tokiwa-green;
+$error-color: $_vivaldi-red;
+
+$background-dark-color: $_nero;
+$background-darker-color: $_fiftieth-shade-of-grey;
+$background-light-color: $_brainstem-grey;
+$background-lighter-color: $_doctor;
+
+$text-color: $_nero;
+$text-inverted-color: $_white;
+$text-muted-color: $_brainstem-grey;
+$text-light-color: $_doctor;
+$text-light-error-color: $_placebo-red;
+
+$border-color: $_brainstem-grey;
+$border-focus-color: $_nero;
+$border-error-color: $_vivaldi-red;
+$border-success-color: $_tokiwa-green;
+$border-light-color: $_brainstem-grey;

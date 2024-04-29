@@ -1,0 +1,8 @@
+@use "@styles/settings/variables";
+
+footer {
+    background-color: variables.$background-light-color;
+    color: #fff;
+    margin-top: auto;
+    padding: variables.$spacing-lg variables.$spacing-sm;
+}

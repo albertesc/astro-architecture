@@ -1,0 +1,43 @@
+---
+import "./button.scss";
+
+interface Props {
+  tag: "a" | "button";
+  href?: string;
+  type?: "primary" | "alternative" | "secondary";
+  disabled?: boolean;
+}
+
+const { tag, href, type = "primary", disabled } = Astro.props;
+---
+
+{
+  tag === "a" && (
+    <a
+      href={href}
+      class:list={[
+        "button",
+        { "button--primary": type === "primary" },
+        { "button--alternative": type === "alternative" },
+        { "button--secondary": type === "secondary" },
+        { "button--disabled": disabled },
+      ]}
+    >
+      <slot />
+    </a>
+  )
+}{
+  tag === "button" && (
+    <button
+      class:list={[
+        "button",
+        { "button--primary": type === "primary" },
+        { "button--alternative": type === "alternative" },
+        { "button--secondary": type === "secondary" },
+        { "button--disabled": disabled },
+      ]}
+    >
+      <slot />
+    </button>
+  )
+}

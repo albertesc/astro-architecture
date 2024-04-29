@@ -1,0 +1,13 @@
+$br-base: 4;
+
+$_br-sm: calc(1 / $br-base) + rem;
+$_br-md: calc(2 / $br-base) + rem;
+$_br-lg: calc(4 / $br-base) + rem;
+$_br-xl: calc(6 / $br-base) + rem;
+$_br-full: 9999px;
+
+// Border radius applications
+$br-input: $_br-md;
+$br-button: $_br-md;
+$br-tags: $_br-full;
+$br-alert: $_br-md;

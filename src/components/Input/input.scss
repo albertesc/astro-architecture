@@ -1,0 +1,77 @@
+@use "../../styles/settings/variables";
+
+.input {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    svg {
+        position: absolute;
+        width: variables.$icon-size-md;
+        height: variables.$icon-size-md;
+        right: variables.$spacing-md;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &__label {
+        font-size: variables.$fs-body-sm;
+        margin-bottom: variables.$spacing-xs;
+        color: variables.$text-color;
+        line-height: 1;
+    }
+
+    &__wrapper {
+        position: relative;
+    }
+
+    &__control {
+        padding: variables.$spacing-md;
+        border: 1px solid variables.$border-color;
+        border-radius: variables.$br-input;
+        font-size: variables.$fs-body;
+        width: 100%;
+
+        &::placeholder {
+            color: variables.$text-light-color;
+        }
+
+        &:focus {
+            border-color: variables.$border-focus-color;
+            outline: none;
+        }
+    }
+
+    &__helper {
+        font-size: variables.$fs-body-sm;
+        color: variables.$text-muted-color;
+        margin-top: variables.$spacing-xs;
+        line-height: 1;
+    }
+
+    &--error {
+        .input__control {
+            border-color: variables.$border-error-color;
+            padding-right: variables.$spacing-xl;
+
+            &::placeholder {
+                color: variables.$text-light-error-color;
+            }
+        }
+
+        svg {
+            stroke: variables.$error-color;
+        }
+    }
+
+    &--success {
+        .input__control {
+            border-color: variables.$border-success-color;
+            padding-right: variables.$spacing-xl;
+        }
+
+        svg {
+            stroke: variables.$success-color;
+        }
+    }
+}

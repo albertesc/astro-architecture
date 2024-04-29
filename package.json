@@ -1,0 +1,29 @@
+{
+  "name": "astro-architecture",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "A project to build a static site for testing pages, components and accessibility",
+  "author": {
+    "name": "Albert Escamilla"
+  },
+  "scripts": {
+    "test": "playwright test",
+    "dev": "astro dev --open",
+    "dev:host": "astro dev --host",
+    "build": "astro build && sass src/components/:dist/css/components/",
+    "build:test": "playwright test && astro build && sass src/components/:dist/css/components/",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@axe-core/playwright": "^4.9.0",
+    "astro": "^4.6.2",
+    "axe-html-reporter": "^2.2.3"
+  },
+  "devDependencies": {
+    "sass": "^1.75.0",
+    "@playwright/test": "^1.43.1",
+    "@types/node": "^20.12.7"
+  },
+  "license": "MIT"
+}
