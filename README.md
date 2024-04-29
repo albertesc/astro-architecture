@@ -1,12 +1,20 @@
 # Astro basic architecture with accessibility testing
 
+## Installation
+
 ```sh
 npm create astro@latest -- --template albertesc/astro-architecture
 ```
 
 ![just-the-basics](https://github.com/albertesc/astro-architecture/blob/main/screen.png)
 
-## 🧞 Commands
+## Requeriments
+
+* Node.js - v18.17.1 or v20.3.0 or higher. ( v19 is not supported.)
+* Text editor - We recommend VS Code with our Official Astro extension.
+* Terminal - Astro is accessed through its command-line interface (CLI).
+
+## Commands
 
 All commands are run from the root of the project, from a terminal:
 
@@ -21,7 +29,7 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check`                                   |
 | `npm run astro -- --help` | Get help using the Astro CLI                                                       |
 
-## 👀 Want to learn more?
+## Want to learn more?
 
 Feel free to check [astro documentation](https://docs.astro.build).
 
