@@ -6,7 +6,7 @@
       "file": "ui.html",
       "slug": "/ui",
       "status": "in-progress",
-      "accessibility": false
+      "accessibility": true
     },
     {
       "title": "Home page",
