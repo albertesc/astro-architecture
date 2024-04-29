@@ -4,8 +4,6 @@
 npm create astro@latest -- --template albertesc/astro-architecture
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
 ![just-the-basics](https://github.com/albertesc/astro-architecture/blob/main/screen.png)
 
 ## 🧞 Commands
@@ -25,7 +23,7 @@ All commands are run from the root of the project, from a terminal:
 
 ## 👀 Want to learn more?
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Feel free to check [astro documentation](https://docs.astro.build).
 
 ---
 
