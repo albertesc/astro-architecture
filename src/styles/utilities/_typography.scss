@@ -1,13 +1,9 @@
 @use "../settings/variables";
 
 .is-muted {
-    color: variables.$text-muted-color;
+    color: var(--text-muted-color);
 }
 
 .is-small {
     font-size: variables.$fs-body-sm;
-}
-
-.is-block {
-    display: block;
 }

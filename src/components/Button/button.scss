@@ -3,72 +3,73 @@
 .button {
     display: inline-block;
     text-decoration: none;
-    color: variables.$text-inverted-color;
+    color: var(--text-inverted-color);
     padding: variables.$spacing-md variables.$spacing-xl;
     border-radius: variables.$br-button;
     border-style: solid;
-    border-width: 1px;
+    border-width: 2px;
     line-height: 1;
+    letter-spacing: 0.5px;
 
     &:hover {
-        color: variables.$text-inverted-color;
+        color: var(--text-inverted-color);
     }
 
     &:focus {
         outline: none;
-        color: variables.$text-inverted-color;
+        color: var(--text-inverted-color);
     }
 
     &--primary {
-        background-color: variables.$primary-color;
-        border-color: variables.$primary-color;
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
 
         &:hover {
-            background-color: variables.$primary-dark-color;
-            border-color: variables.$primary-dark-color;
+            background-color: var(--primary-dark-color);
+            border-color: var(--primary-dark-color);
         }
 
         &.button--disabled {
-            background-color: variables.$primary-dark-color;
-            border-color: variables.$primary-dark-color;
+            background-color: var(--primary-dark-color);
+            border-color: var(--primary-dark-color);
             color: #fabbbb;
         }
     }
 
     &--alternative {
-        background-color: variables.$alternate-color;
-        border-color: variables.$alternate-color;
+        background-color: var(--alternate-color);
+        border-color: var(--alternate-color);
 
         &:hover {
-            background-color: variables.$alternate-dark-color;
-            border-color: variables.$alternate-dark-color;
+            background-color: var(--alternate-dark-color);
+            border-color: var(--alternate-dark-color);
         }
 
         &.button--disabled {
-            background-color: variables.$alternate-dark-color;
-            border-color: variables.$alternate-dark-color;
+            background-color: var(--alternate-dark-color);
+            border-color: var(--alternate-dark-color);
             color: #c9b7ff;
         }
     }
 
-    &--secondary {
+    &--ghost {
         background-color: transparent;
-        border-color: variables.$border-color;
-        color: variables.$text-color;
+        border-color: var(--border-color);
+        color: var(--text-color);
 
         &:hover {
             background-color: transparent;
-            border-color: variables.$border-focus-color;
-            color: variables.$text-color;
+            border-color: var(--border-color);
+            color: var(--text-color);
         }
 
         &:focus {
-            color: variables.$text-color;
+            color: var(--text-color);
         }
 
         &.button--disabled {
-            border-color: variables.$border-light-color;
-            color: variables.$text-muted-color;
+            border-color: var(--border-color);
+            color: var(--text-muted-color);
         }
     }
 

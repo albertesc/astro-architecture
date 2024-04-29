@@ -3,7 +3,7 @@
     {
       "title": "Design System",
       "path": "/src/pages/ui.astro",
-      "file": "ui.html",
+      "file": "ui",
       "slug": "/ui",
       "status": "in-progress",
       "accessibility": true
@@ -11,7 +11,7 @@
     {
       "title": "Home page",
       "path": "/src/pages/home.astro",
-      "file": "home.html",
+      "file": "home",
       "slug": "/home",
       "status": "in-progress",
       "accessibility": true

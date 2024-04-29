@@ -28,7 +28,7 @@ import "@styles/index.scss";
             <div>
               <span
                 class="is-block bg-primary"
-                style="width:120px;height:120px;"
+                style="width:120px;height:120px;display:block;"
               >
               </span>
               <small class="is-muted">#d0315d</small>
@@ -36,44 +36,10 @@ import "@styles/index.scss";
             <div>
               <span
                 class="is-block bg-alternative"
-                style="width:120px;height:120px;"
+                style="width:120px;height:120px;display:block;"
               >
               </span>
               <small class="is-muted">#5E48E8</small>
-            </div>
-            <div>
-              <span
-                class="is-block bg-highlight"
-                style="width:120px;height:120px;"
-              >
-              </span>
-              <small class="is-muted">#8CE0F3</small>
-            </div>
-          </div>
-
-          <div style="display:flex;gap:1rem;margin-top:3rem;">
-            <div>
-              <span class="is-block bg-dark" style="width:120px;height:70px;">
-              </span>
-              <small class="is-muted">#0a0a0a</small>
-            </div>
-            <div>
-              <span class="is-block bg-darker" style="width:120px;height:70px;">
-              </span>
-              <small class="is-muted">#3a3a3a</small>
-            </div>
-            <div>
-              <span class="is-block bg-light" style="width:120px;height:70px;">
-              </span>
-              <small class="is-muted">#767676</small>
-            </div>
-            <div>
-              <span
-                class="is-block bg-lighter"
-                style="width:120px;height:70px;"
-              >
-              </span>
-              <small class="is-muted">#a3a3a3</small>
             </div>
           </div>
         </div>
@@ -88,38 +54,32 @@ import "@styles/index.scss";
 
         <div style="display:grid;gap:1rem;">
           <span style="display:flex;gap:2rem;align-items:baseline;">
-            <small class="is-muted" style="width:40px;">H1</small>
+            <small class="is-muted" style="width:90px;">H1</small>
             <h1>Heading 1</h1>
           </span>
           <span style="display:flex;gap:2rem;align-items:baseline;">
-            <small class="is-muted" style="width:40px;">H2</small>
+            <small class="is-muted" style="width:90px;">H2</small>
             <h2>Heading 2</h2>
           </span>
           <span style="display:flex;gap:2rem;align-items:baseline;">
-            <small class="is-muted" style="width:40px;">H3</small>
+            <small class="is-muted" style="width:90px;">H3</small>
             <h3>Heading 3</h3>
           </span>
           <span style="display:flex;gap:2rem;align-items:baseline;">
-            <small class="is-muted" style="width:40px;">H4</small>
+            <small class="is-muted" style="width:90px;">H4</small>
             <h4>Heading 4</h4>
           </span>
           <span style="display:flex;gap:2rem;align-items:baseline;">
-            <small class="is-muted" style="width:40px;">P</small>
+            <small class="is-muted" style="width:90px;">P</small>
             <p>Paragraph</p>
           </span>
           <span style="display:flex;gap:2rem;align-items:baseline;">
-            <small class="is-muted" style="width:40px;">SMALL</small>
+            <small class="is-muted" style="width:90px;">SMALL</small>
             <small>Paragraph</small>
           </span>
-
           <span style="display:flex;gap:2rem;align-items:baseline;">
-            <small class="is-muted" style="width:40px;">LIST</small>
+            <small class="is-muted" style="width:90px;">UI LIST</small>
             <ul class="ui-list">
-              <li>Item 1</li>
-              <li>Item 2</li>
-              <li>Item 3</li>
-            </ul>
-            <ul class="ui-list ui-list--horizontal">
               <li>Item 1</li>
               <li>Item 2</li>
               <li>Item 3</li>
@@ -162,12 +122,10 @@ import "@styles/index.scss";
             <div
               style="display:flex;flex-direction:column;align-items:flex-start;gap:1rem;"
             >
-              <small class="is-muted">Secondary</small>
-              <Button tag="a" href="#" type="secondary">Button</Button>
-              <small class="is-muted">Secondary disabled</small>
-              <Button tag="a" href="#" type="secondary" disabled>
-                Button
-              </Button>
+              <small class="is-muted">Ghost</small>
+              <Button tag="a" href="#" type="ghost">Button</Button>
+              <small class="is-muted">Ghost disabled</small>
+              <Button tag="a" href="#" type="ghost" disabled> Button </Button>
             </div>
           </div>
         </div>

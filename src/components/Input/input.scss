@@ -17,7 +17,7 @@
     &__label {
         font-size: variables.$fs-body-sm;
         margin-bottom: variables.$spacing-xs;
-        color: variables.$text-color;
+        color: var(--text-color);
         line-height: 1;
     }
 
@@ -26,52 +26,54 @@
     }
 
     &__control {
+        background-color: transparent;
         padding: variables.$spacing-md;
-        border: 1px solid variables.$border-color;
+        border: 2px solid var(--border-color);
         border-radius: variables.$br-input;
         font-size: variables.$fs-body;
         width: 100%;
 
         &::placeholder {
-            color: variables.$text-light-color;
+            color: var(--text-muted-color);
+            font-weight: 300;
         }
 
         &:focus {
-            border-color: variables.$border-focus-color;
+            border-color: var(--border-color);
             outline: none;
         }
     }
 
     &__helper {
         font-size: variables.$fs-body-sm;
-        color: variables.$text-muted-color;
+        color: var(--text-muted-color);
         margin-top: variables.$spacing-xs;
         line-height: 1;
     }
 
     &--error {
         .input__control {
-            border-color: variables.$border-error-color;
+            border-color: var(--error-color);
             padding-right: variables.$spacing-xl;
 
             &::placeholder {
-                color: variables.$text-light-error-color;
+                color: var(--error-color);
             }
         }
 
         svg {
-            stroke: variables.$error-color;
+            stroke: var(--error-color);
         }
     }
 
     &--success {
         .input__control {
-            border-color: variables.$border-success-color;
+            border-color: var(--success-color);
             padding-right: variables.$spacing-xl;
         }
 
         svg {
-            stroke: variables.$success-color;
+            stroke: var(--success-color);
         }
     }
 }

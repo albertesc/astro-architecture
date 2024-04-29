@@ -8,7 +8,7 @@ const pages = data.pages;
 
 fs.rmSync('public/accessibility', { recursive: true, force: true });
 
-test.describe('ACCESSIBILITY TEST', () => {
+test.describe('ACCESSIBILITY TEST LIGHT THEME', () => {
   for (const pageData of pages) {
     test(`should not have accessibility issues on page ${pageData.title}`, async ({ page }) => {
       const customSummary = `Test Case: Complete page analysis
@@ -28,7 +28,7 @@ test.describe('ACCESSIBILITY TEST', () => {
         results: accessibilityScanResults,
         options: {
           customSummary,
-          reportFileName: `${pageData.file}`,
+          reportFileName: `${pageData.file}.html`,
           outputDir: 'public/accessibility',
         },
       });

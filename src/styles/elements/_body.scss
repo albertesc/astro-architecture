@@ -1,9 +1,10 @@
 @use "../settings/variables";
 
 body {
-    color: variables.$text-color;
+    color: var(--text-color);
     font-family: variables.$font-family;
     font-size: variables.$fs-body;
+    background-color: var(--background-body);
     line-height: 1.8;
     display: flex;
     flex-direction: column;

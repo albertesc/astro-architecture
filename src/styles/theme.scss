@@ -1,0 +1,41 @@
+@use "./settings/variables";
+
+:root {
+    --background-body: #{variables.$white-color};
+
+    --primary-color: #{variables.$primary-color};
+    --primary-dark-color: #{variables.$primary-dark-color};
+    --alternate-color: #{variables.$alternate-color};
+    --alternate-dark-color: #{variables.$alternate-dark-color};
+    --success-color: #{variables.$success-color};
+    --error-color: #{variables.$error-color};
+
+    --background-dark-color: #{variables.$background-dark-color};
+    --background-light-color: #{variables.$background-light-color};
+
+    --text-color: #{variables.$text-color};
+    --text-inverted-color: #{variables.$text-inverted-color};
+    --text-muted-color: #{variables.$text-muted-color};
+
+    --border-color: #{variables.$border-color};
+
+    &.dark-theme {
+        --background-body: #{variables.$white-color};
+
+        --primary-color: #{variables.$primary-color};
+        --primary-dark-color: #{variables.$primary-dark-color};
+        --alternate-color: #{variables.$alternate-color};
+        --alternate-dark-color: #{variables.$alternate-dark-color};
+        --success-color: #{variables.$success-color};
+        --error-color: #{variables.$error-color};
+
+        --background-dark-color: #{variables.$background-dark-color};
+        --background-light-color: #{variables.$background-light-color};
+
+        --text-color: #{variables.$text-color};
+        --text-inverted-color: #{variables.$text-inverted-color};
+        --text-muted-color: #{variables.$text-muted-color};
+
+        --border-color: #{variables.$border-color};
+    }
+}
