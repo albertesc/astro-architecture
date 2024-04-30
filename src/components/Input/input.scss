@@ -21,10 +21,6 @@
         line-height: 1;
     }
 
-    &__wrapper {
-        position: relative;
-    }
-
     &__control {
         background-color: transparent;
         padding: variables.$spacing-md;
@@ -42,38 +38,9 @@
             border-color: var(--border-color);
             outline: none;
         }
-    }
 
-    &__helper {
-        font-size: variables.$fs-body-sm;
-        color: var(--text-muted-color);
-        margin-top: variables.$spacing-xs;
-        line-height: 1;
-    }
-
-    &--error {
-        .input__control {
-            border-color: var(--error-color);
-            padding-right: variables.$spacing-xl;
-
-            &::placeholder {
-                color: var(--error-color);
-            }
-        }
-
-        svg {
-            stroke: var(--error-color);
-        }
-    }
-
-    &--success {
-        .input__control {
-            border-color: var(--success-color);
-            padding-right: variables.$spacing-xl;
-        }
-
-        svg {
-            stroke: var(--success-color);
+        &:disabled {
+            cursor: not-allowed;
         }
     }
 }

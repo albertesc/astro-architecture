@@ -1,10 +1,9 @@
 ---
 import data from "@data/pages.json";
+import componentsData from "@data/components.json";
 
 const pages = data.pages;
-
-const href = Astro.url.href;
-console.log(href);
+const components = componentsData.components;
 ---
 
 <!doctype html>
@@ -13,6 +12,7 @@ console.log(href);
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
+    <title>[Project Name]</title>
     <script is:inline src="https://cdn.tailwindcss.com"></script>
     <script is:inline>
       tailwind.config = {
@@ -26,91 +26,158 @@ console.log(href);
     </script>
   </head>
   <body>
-    <main class="container max-w-4xl py-40">
-      <h1 class="text-3xl font-semibold text-gray-800">List of pages</h1>
-
+    <main class="container max-w-2xl pb-40 pt-10">
       <p
         class="mt-3 text-gray-500 text-sm p-3 bg-gray-50 border border-gray-100 rounded-md"
       >
-        En esta pantalla podrás crear un listado de todas pantallas del proyecto
-        e informar del estado en que se encuentran. Para actualizar la
-        información modifica el archivo <span class="font-bold">pages.json</span
-        > en la carpeta <span class="font-bold">/src/data/</span>. Recuerda
-        mantener la información actualizada.
+        En esta pantalla encontraras un listado de todas pantallas y componentes
+        del proyecto así como su estado en que se encuentran.
       </p>
 
-      <ul role="list" class="divide-y divide-gray-100 mt-4">
+      <h3
+        class="mt-6 text-lg font-semibold flex items-center gap-2 px-2 py-1 bg-orange-100 text-orange-900"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-5 h-5"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 20.25h12m-7.5-3v3m3-3v3m-10.125-3h17.25c.621 0 1.125-.504 1.125-1.125V4.875c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125Z"
+          ></path>
+        </svg>
+        Listado de pantallas
+      </h3>
+
+      <ul role="list" class="divide-y divide-gray-100">
         {
-          pages.map((page) => (
-            <li class="flex justify-between w-full gap-x-6 py-3">
-              <div class="flex min-w-0 gap-x-4">
-                <div class="min-w-0 flex-auto">
+          pages.map((page) => {
+            return (
+              <li class="flex items-center justify-between py-5 w-full">
+                <div class="min-w-0 w-full">
+                  <div class="flex items-start justify-between sm:justify-start gap-x-3 w-full">
+                    <a
+                      href={`/accessibility${page.slug}.html`}
+                      target="_blank"
+                      class="text-lg sm:text-sm font-semibold leading-6 text-gray-900 hover:underline"
+                    >
+                      {page.title}
+                    </a>
+                    <div class="flex gap-2">
+                      {page.status === "in-progress" ? (
+                        <p class="rounded-md whitespace-nowrap mt-0.5 px-1.5 py-0.5 text-xs font-medium ring-1 ring-inset text-blue-700 bg-blue-50 ring-blue-600/20">
+                          In progress
+                        </p>
+                      ) : (
+                        <p class="rounded-md whitespace-nowrap mt-0.5 px-1.5 py-0.5 text-xs font-medium ring-1 ring-inset text-green-700 bg-green-50 ring-green-600/20">
+                          Done
+                        </p>
+                      )}
+                      {page.accessibility ? (
+                        <p class="rounded-md whitespace-nowrap mt-0.5 px-1.5 py-0.5 text-xs font-medium ring-1 ring-inset text-gray-700 bg-gray-50 ring-gray-600/20">
+                          WCAG 2.0 AA
+                        </p>
+                      ) : (
+                        <p class="rounded-md whitespace-nowrap mt-0.5 px-1.5 py-0.5 text-xs font-medium ring-1 ring-inset text-red-700 bg-red-50 ring-red-600/20">
+                          Error Accesibilidad
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                  <div class="mt-1 flex items-center gap-x-2 text-xs leading-5 text-gray-500">
+                    <p class="truncate">{page.path}</p>
+                    <svg viewBox="0 0 2 2" class="h-0.5 w-0.5 fill-current">
+                      <circle cx="1" cy="1" r="1" />
+                    </svg>
+                    <a
+                      href={`/accessibility${page.slug}.html`}
+                      target="_blank"
+                      class="whitespace-nowrap hover:underline"
+                    >
+                      Test accesibilidad
+                    </a>
+                  </div>
+                </div>
+                <div class="flex flex-none items-center gap-x-4">
                   <a
                     href={page.slug}
                     target="_blank"
-                    class="text-sm font-semibold leading-6 text-gray-800 hover:text-gray-950 hover:underline"
+                    class="hidden rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:block"
                   >
-                    {page.title}
+                    Ver página
                   </a>
-                  <p class="mt-3 truncate text-xs leading-5 text-gray-500">
-                    {page.path}
-                  </p>
                 </div>
-              </div>
-              <div class="shrink-0 flex flex-col items-end">
-                <a
-                  href={page.slug}
-                  target="_blank"
-                  class="text-sm leading-6 text-gray-900 flex items-center gap-2 hover:underline"
-                >
-                  {`${href}${page.file}.html`}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="w-4 h-4"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-                    />
-                  </svg>
-                </a>
-                <div class="mt-3 flex items-center gap-2">
-                  {page.accessibility ? (
-                    <a
-                      href={`/accessibility${page.slug}.html`}
-                      target="_blank"
-                      class="rounded-md py-1 px-2 text-xs font-medium ring-1 ring-inset text-green-700 bg-green-50 ring-green-600/10"
-                    >
-                      Accessibility
-                    </a>
-                  ) : (
-                    <a
-                      href={`/accessibility${page.slug}.html`}
-                      target="_blank"
-                      class="rounded-md py-1 px-2 text-xs font-medium ring-1 ring-inset text-red-700 bg-red-50 ring-red-600/10"
-                    >
-                      No accessibility
-                    </a>
-                  )}
+              </li>
+            );
+          })
+        }
+      </ul>
 
-                  {page.status === "in-progress" ? (
-                    <div class="rounded-md py-1 px-2 text-xs font-medium ring-1 ring-inset text-blue-700 bg-blue-50 ring-blue-600/10">
-                      In-progress
-                    </div>
-                  ) : (
-                    <div class="rounded-md py-1 px-2 text-xs font-medium ring-1 ring-inset text-green-700 bg-green-50 ring-green-600/10">
-                      Done
-                    </div>
-                  )}
+      <h3
+        class="mt-6 text-lg font-semibold flex items-center gap-2 px-2 py-1 bg-yellow-100 text-yellow-800"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-5 h-5"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M14.25 6.087c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 0-1.036-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.401.604.401.959v0a.64.64 0 0 1-.657.643 48.39 48.39 0 0 1-4.163-.3c.186 1.613.293 3.25.315 4.907a.656.656 0 0 1-.658.663v0c-.355 0-.676-.186-.959-.401a1.647 1.647 0 0 0-1.003-.349c-1.036 0-1.875 1.007-1.875 2.25s.84 2.25 1.875 2.25c.369 0 .713-.128 1.003-.349.283-.215.604-.401.959-.401v0c.31 0 .555.26.532.57a48.039 48.039 0 0 1-.642 5.056c1.518.19 3.058.309 4.616.354a.64.64 0 0 0 .657-.643v0c0-.355-.186-.676-.401-.959a1.647 1.647 0 0 1-.349-1.003c0-1.035 1.008-1.875 2.25-1.875 1.243 0 2.25.84 2.25 1.875 0 .369-.128.713-.349 1.003-.215.283-.4.604-.4.959v0c0 .333.277.599.61.58a48.1 48.1 0 0 0 5.427-.63 48.05 48.05 0 0 0 .582-4.717.532.532 0 0 0-.533-.57v0c-.355 0-.676.186-.959.401-.29.221-.634.349-1.003.349-1.035 0-1.875-1.007-1.875-2.25s.84-2.25 1.875-2.25c.37 0 .713.128 1.003.349.283.215.604.401.96.401v0a.656.656 0 0 0 .658-.663 48.422 48.422 0 0 0-.37-5.36c-1.886.342-3.81.574-5.766.689a.578.578 0 0 1-.61-.58v0Z"
+          ></path>
+        </svg>
+        Listado de components
+      </h3>
+
+      <ul role="list" class="divide-y divide-gray-100">
+        {
+          components.map((component) => {
+            return (
+              <li class="flex items-center justify-between py-5 w-full">
+                <div class="min-w-0 w-full">
+                  <div class="flex items-start justify-between sm:justify-start gap-x-3 w-full">
+                    <a
+                      href={component.docs}
+                      target="_blank"
+                      class="text-lg sm:text-sm font-semibold leading-6 text-gray-900 hover:underline"
+                    >
+                      {component.name}
+                    </a>
+                    {component.status === "in-progress" ? (
+                      <p class="rounded-md whitespace-nowrap mt-0.5 px-1.5 py-0.5 text-xs font-medium ring-1 ring-inset text-gray-700 bg-gray-50 ring-gray-600/20">
+                        In progress
+                      </p>
+                    ) : (
+                      <p class="rounded-md whitespace-nowrap mt-0.5 px-1.5 py-0.5 text-xs font-medium ring-1 ring-inset text-green-700 bg-green-50 ring-green-600/20">
+                        Done
+                      </p>
+                    )}
+                  </div>
+                  <div class="mt-1 flex items-center gap-x-2 text-xs leading-5 text-gray-500">
+                    <p class="truncate">{component.path}</p>
+                  </div>
                 </div>
-              </div>
-            </li>
-          ))
+                <div class="flex flex-none items-center gap-x-4">
+                  <a
+                    href={component.docs}
+                    target="_blank"
+                    class="hidden rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:block"
+                  >
+                    Ver componente
+                  </a>
+                </div>
+              </li>
+            );
+          })
         }
       </ul>
     </main>

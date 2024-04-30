@@ -1,0 +1,29 @@
+---
+name: Input
+layout: ../../layouts/Docs.astro
+---
+import Input from '../../components/Input/input.astro'
+
+### Input
+<Input name="input" label="Label" placeholder="Placeholder" />
+
+```html
+<div class="input">
+    <label class="input__label" for="input">
+        Label
+    </label>
+    <input type="text" name="input" id="input" class="input__control" placeholder="Placeholder" aria-invalid="false" aria-describedby="input">
+</div>
+```
+
+### Input disabled
+<Input name="input" label="Label" placeholder="Placeholder" disabled />
+
+```html
+<div class="input">
+    <label class="input__label" for="input">
+        Label
+    </label>
+    <input type="text" name="input" id="input" class="input__control" placeholder="Placeholder" disabled aria-invalid="false" aria-describedby="input">
+</div>
+```

@@ -1,5 +1,7 @@
 import { defineConfig } from 'astro/config';
 
+import mdx from "@astrojs/mdx";
+
 // https://astro.build/config
 export default defineConfig({
   scopedStyleStrategy: 'class',
@@ -15,7 +17,14 @@ export default defineConfig({
   vite: {
     build: {
       minify: true,
-      cssCodeSplit: false,
+      cssCodeSplit: false
     }
   },
+  markdown: {
+    shikiConfig: {
+      theme: 'one-dark-pro',
+      wrap: false
+    },
+  },
+  integrations: [mdx()]
 });

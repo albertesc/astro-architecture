@@ -1,0 +1,37 @@
+---
+import Header from "@components/Header/header.astro";
+import Footer from "@components/Footer/footer.astro";
+import "@styles/index.scss";
+
+const { frontmatter } = Astro.props;
+const { name } = frontmatter;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Docs | {name}</title>
+    <style is:inline>
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin-top: 2rem !important;
+        margin-bottom: 1rem !important;
+      }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <main class="container" style="max-width: 880px;">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

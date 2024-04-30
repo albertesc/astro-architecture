@@ -1,0 +1,16 @@
+{
+    "components": [
+        {
+            "name": "Button",
+            "path": "/src/components/Button/button.astro",
+            "docs": "docs/button",
+            "status": "done"
+        },
+        {
+            "name": "Input",
+            "path": "/src/components/Input/input.astro",
+            "docs": "docs/input",
+            "status": "done"
+        }
+    ]
+}
