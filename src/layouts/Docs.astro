@@ -1,7 +1,5 @@
 ---
 import config from "@data/config.json";
-import Header from "@components/Header/header.astro";
-import Footer from "@components/Footer/footer.astro";
 import "@styles/index.scss";
 
 const { frontmatter } = Astro.props;
@@ -29,10 +27,8 @@ const { name } = frontmatter;
     </style>
   </head>
   <body>
-    <Header />
     <main class="container" style="max-width: 880px;">
       <slot />
     </main>
-    <Footer />
   </body>
 </html>
