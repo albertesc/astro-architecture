@@ -1,9 +1,0 @@
-@use "../settings/variables";
-
-.is-muted {
-    color: var(--text-muted-color);
-}
-
-.is-small {
-    font-size: variables.$fs-body-sm;
-}

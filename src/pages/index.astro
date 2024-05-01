@@ -1,8 +1,9 @@
 ---
-import data from "@data/pages.json";
+import config from "@data/config.json";
+import pagesData from "@data/pages.json";
 import componentsData from "@data/components.json";
 
-const pages = data.pages;
+const pages = pagesData.pages;
 const components = componentsData.components;
 ---
 
@@ -12,7 +13,7 @@ const components = componentsData.components;
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
-    <title>[Project Name]</title>
+    <title>{config.project.name}</title>
     <script is:inline src="https://cdn.tailwindcss.com"></script>
     <script is:inline>
       tailwind.config = {
@@ -27,11 +28,15 @@ const components = componentsData.components;
   </head>
   <body>
     <main class="container max-w-2xl pb-40 pt-10">
+      <h1 class="text-3xl font-semibold text-gray-900">
+        {config.project.name}
+      </h1>
+
       <p
         class="mt-3 text-gray-500 text-sm p-3 bg-gray-50 border border-gray-100 rounded-md"
       >
         En esta pantalla encontraras un listado de todas pantallas y componentes
-        del proyecto así como su estado en que se encuentran.
+        del proyecto así como el estado en que se encuentran.
       </p>
 
       <h3
