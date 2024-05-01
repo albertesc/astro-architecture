@@ -5,10 +5,9 @@ interface Props {
   tag: "a" | "button";
   href?: string;
   type?: "primary" | "alternative" | "ghost";
-  disabled?: boolean;
 }
 
-const { tag, href, type = "primary", disabled } = Astro.props;
+const { tag, href, type = "primary" } = Astro.props;
 ---
 
 {
@@ -20,7 +19,6 @@ const { tag, href, type = "primary", disabled } = Astro.props;
         { "button--primary": type === "primary" },
         { "button--alternative": type === "alternative" },
         { "button--ghost": type === "ghost" },
-        { "button--disabled": disabled },
       ]}
     >
       <slot />
@@ -34,7 +32,6 @@ const { tag, href, type = "primary", disabled } = Astro.props;
         { "button--primary": type === "primary" },
         { "button--alternative": type === "alternative" },
         { "button--ghost": type === "ghost" },
-        { "button--disabled": disabled },
       ]}
     >
       <slot />

@@ -4,25 +4,46 @@ layout: ../../layouts/Docs.astro
 ---
 import Button from '../../components/Button/button.astro'
 
-### Button primary
-<Button tag="button">Button</Button>
+# Button
+
+Buttons allow users to trigger an action or event with a single click. For example, you can use a button 
+for allowing the functionality of submitting a form, opening a dialog, canceling an action, or performing 
+a delete operation.
+
+## Variants
+
+### Button with button tag
+
+View example:
+
+<div class="component-container row">
+    <Button tag="button">Button</Button>
+    <Button tag="button" type='alternative'>Button</Button>
+    <Button tag="button" type='ghost'>Button</Button>
+</div>
+
+HTML code:
 
 ```html
 <button class="button button--primary">Button</button>
-```
-
-### Button alternative
-
-<Button tag="button" type='alternative'>Button</Button>
-
-```html
 <button class="button button--alternative">Button</button>
+<button class="button button--ghost">Button</button>
 ```
 
-### Button ghost
+### Button with anchor tag
 
-<Button tag="button" type='ghost'>Button</Button>
+View example:
+
+<div class="component-container row">
+    <Button tag="a" href="#">Button</Button>
+    <Button tag="a" href="#" type='alternative'>Button</Button>
+    <Button tag="a" href="#" type='ghost'>Button</Button>
+</div>
+
+HTML code:
 
 ```html
-<button class="button button--ghost">Button</button>
+<a href="#" class="button button--primary">Button</a>
+<a href="#" class="button button--alternative">Button</a>
+<a href="#" class="button button--ghost">Button</a>
 ```

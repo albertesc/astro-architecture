@@ -28,12 +28,6 @@
             background-color: var(--primary-dark-color);
             border-color: var(--primary-dark-color);
         }
-
-        &.button--disabled {
-            background-color: var(--primary-dark-color);
-            border-color: var(--primary-dark-color);
-            color: #fabbbb;
-        }
     }
 
     &--alternative {
@@ -44,12 +38,6 @@
             background-color: var(--alternate-dark-color);
             border-color: var(--alternate-dark-color);
         }
-
-        &.button--disabled {
-            background-color: var(--alternate-dark-color);
-            border-color: var(--alternate-dark-color);
-            color: #c9b7ff;
-        }
     }
 
     &--ghost {
@@ -58,7 +46,7 @@
         color: var(--text-color);
 
         &:hover {
-            background-color: transparent;
+            background-color: var(--whiteish-color);
             border-color: var(--border-color);
             color: var(--text-color);
         }
@@ -66,14 +54,5 @@
         &:focus {
             color: var(--text-color);
         }
-
-        &.button--disabled {
-            border-color: var(--border-color);
-            color: var(--text-muted-color);
-        }
-    }
-
-    &--disabled {
-        cursor: not-allowed;
     }
 }

@@ -2,7 +2,7 @@
 
 .container {
     max-width: variables.$max-width;
-    padding: variables.$spacing-md variables.$spacing-sm;
+    padding: 0 variables.$spacing-sm;
     margin: 0 auto;
     width: 100%;
 }

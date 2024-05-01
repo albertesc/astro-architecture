@@ -1,10 +1,16 @@
 {
     "components": [
         {
+            "name": "Colors",
+            "path": "",
+            "docs": "docs/colors",
+            "status": "in-progress"
+        },
+        {
             "name": "Button",
             "path": "/src/components/Button/button.astro",
             "docs": "docs/button",
-            "status": "done"
+            "status": "in-progress"
         }
     ]
 }
