@@ -1,9 +1,17 @@
 @use "../../styles/settings/variables";
 
 .button {
+    --button-color: #{variables.$text-inverted-color};
+    --button-primary-bg: #{variables.$primary-color};
+    --button-primary-hover-bg: #{variables.$primary-dark-color};
+    --button-alternative-bg: #{variables.$alternate-color};
+    --button-alternative-hover-bg: #{variables.$alternate-dark-color};
+}
+
+.button {
     display: inline-block;
     text-decoration: none;
-    color: var(--text-inverted-color);
+    color: var(--button-color);
     padding: variables.$spacing-md variables.$spacing-xl;
     border-radius: variables.$br-button;
     border-style: solid;
@@ -12,47 +20,45 @@
     letter-spacing: 0.5px;
 
     &:hover {
-        color: var(--text-inverted-color);
+        color: var(--button-color);
     }
 
     &:focus {
         outline: none;
-        color: var(--text-inverted-color);
+        color: var(--button-color);
     }
 
     &--primary {
-        background-color: var(--primary-color);
-        border-color: var(--primary-color);
+        background-color: var(--button-primary-bg);
+        border-color: var(--button-primary-bg);
 
         &:hover {
-            background-color: var(--primary-dark-color);
-            border-color: var(--primary-dark-color);
+            background-color: var(--button-primary-hover-bg);
+            border-color: var(--button-primary-hover-bg);
         }
     }
 
     &--alternative {
-        background-color: var(--alternate-color);
-        border-color: var(--alternate-color);
+        background-color: var(--button-alternative-bg);
+        border-color: var(--button-alternative-bg);
 
         &:hover {
-            background-color: var(--alternate-dark-color);
-            border-color: var(--alternate-dark-color);
+            background-color: var(--button-alternative-hover-bg);
+            border-color: var(--button-alternative-hover-bg);
         }
     }
 
     &--ghost {
         background-color: transparent;
         border-color: var(--border-color);
-        color: var(--text-color);
+        color: var(--border-color);
 
         &:hover {
-            background-color: var(--whiteish-color);
             border-color: var(--border-color);
-            color: var(--text-color);
         }
 
         &:focus {
-            color: var(--text-color);
+            color: var(--border-color);
         }
     }
 }

@@ -1,5 +1,6 @@
 {
     "project": {
-        "name": "My Project"
+        "name": "My Project",
+        "darkmode": false
     }
 }
