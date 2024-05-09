@@ -7,6 +7,12 @@
             "status": "in-progress"
         },
         {
+            "name": "Icons",
+            "path": "",
+            "docs": "docs/icons",
+            "status": "in-progress"
+        },
+        {
             "name": "Button",
             "path": "/src/components/Button/button.astro",
             "docs": "docs/button",

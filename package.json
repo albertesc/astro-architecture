@@ -14,7 +14,7 @@
     "build:test": "playwright test && astro build && sass src/components/:dist/css/components/",
     "preview": "astro preview",
     "astro": "astro",
-    "create:icons": "svg-sprite --symbol --symbol-dest=public/assets/icons public/assets/icons/*.svg && mv public/assets/icons/svg/sprite.css.svg public/assets/icons/sprite.svg && rm -rf public/assets/icons/svg"
+    "create:icons": "svg-sprite --symbol --symbol-dest=public/assets/icons public/assets/icons/*.svg && node lib/create-icons-docs.cjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^2.3.1",

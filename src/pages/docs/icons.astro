@@ -1,0 +1,46 @@
+---
+import Layout from "@layouts/Docs.astro";
+import Icon from "../../components/Icon/icon.astro";
+import icons from "../../data/icons.json";
+---
+
+<Layout>
+  <h1>Icons</h1>
+  <p>
+    Icons are a great way to add visual elements to your page. They can be used
+    to represent actions, objects, and more. Here are some of the icons
+    available in the design system.
+  </p>
+
+  <h3>Usage</h3>
+
+  <div class="component-container icons">
+    {
+      icons.map((icon) => (
+        <span class="icon-item">
+          <Icon name={icon} />
+          <small>{icon}</small>
+        </span>
+      ))
+    }
+  </div>
+
+  <span class="copy-alert">Copied</span>
+</Layout>
+
+<script is:inline>
+  const icons = document.querySelectorAll(".icon-item");
+  const copyAlert = document.querySelector(".copy-alert");
+
+  icons.forEach((icon) => {
+    icon.addEventListener("click", () => {
+      const name = icon.querySelector(".icon").getAttribute("id");
+      navigator.clipboard.writeText(name);
+      copyAlert.classList.add("copied");
+
+      setTimeout(() => {
+        copyAlert.classList.remove("copied");
+      }, 2000);
+    });
+  });
+</script>

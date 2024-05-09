@@ -1,6 +1,10 @@
 {
     "project": {
         "name": "My Project",
-        "darkmode": false
+        "darkmode": false,
+        "colors": {
+            "primary": "#D0315D",
+            "alternative": "#5E48E8"
+        }
     }
 }

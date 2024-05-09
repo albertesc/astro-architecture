@@ -11,9 +11,10 @@ const { name, width, height, size = 24 } = Astro.props;
 
 <svg
   class="icon"
+  id={name}
   width={width ? width : size}
   height={height ? height : size}
   viewBox={`0 0 ${width ? width : size} ${height ? height : size}`}
 >
-  <use xlink:href={`/assets/icons/sprite.svg#${name}`}></use>
+  <use xlink:href={`/assets/icons/svg/sprite.css.svg#${name}`}></use>
 </svg>

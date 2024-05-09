@@ -1,27 +1,22 @@
 $_camellia-rose: #d0315d;
-$_maroon-light: #a61442;
 $_purplish-blue: #5E48E8;
-$_blue-purple: #5028C6;
-$_existential-angst: #0a0a0a;
-$_dead-pixel: #3a3a3a;
-$_sonic-silver: #767676;
-$_aria: #e3e3e3;
+$_black: #0a0a0a;
 $_white: #FFFFFF;
 
 // Variables
 $primary-color: $_camellia-rose;
-$primary-dark-color: $_maroon-light;
+$primary-dark-color: darken($primary-color, 5%);
 
 $alternate-color: $_purplish-blue;
-$alternate-dark-color: $_blue-purple;
+$alternate-dark-color: darken($alternate-color, 5%);
 
-$black-color: $_existential-angst;
-$dark-color: $_dead-pixel;
-$light-color: $_aria;
+$black-color: $_black;
+$dark-color: lighten($_black, 20%);
+$light-color: darken($_white, 20%);
 $white-color: $_white;
 
-$text-color: $_existential-angst;
+$text-color: $_black;
 $text-inverted-color: $_white;
-$text-muted-color: $_sonic-silver;
+$text-muted-color: $light-color;
 
-$border-color: $_sonic-silver;
+$border-color: $light-color;
