@@ -98,6 +98,24 @@ On the project's main screen, you will find a list that will serve as a guide to
 }
 ```
 
+## Icon component
+
+This architecture provides a simple way to create icons using the `<Icon />` component. To add icons, simply place the SVG files in the `/public/assets/icons/` folder and run the command:
+
+```bash
+npm run create:icons
+```
+
+Now you can use the `<Icon name="icon-name" />` component.
+
+```html
+<!-- 
+icon-name corresponds to the name of the .svg file you have added. 
+ex: icon-name.svg 
+-->
+<Icon name="icon-name" />
+```
+
 ---
 
 ## Want to learn more about Astro?
