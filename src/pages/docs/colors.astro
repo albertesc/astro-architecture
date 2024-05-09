@@ -1,5 +1,6 @@
 ---
 import Layout from "@layouts/Docs.astro";
+import Icon from "@components/Icon/icon.astro";
 import data from "@data/colors.json";
 
 const colors = data.colors;
@@ -8,6 +9,7 @@ const objectColors = Object.entries(colors);
 
 <Layout>
   <h1>Colors</h1>
+
   <p>
     Colors are an essential part of any design system. They help to create a
     visual hierarchy, establish a brand identity, and communicate meaning. In
@@ -22,11 +24,14 @@ const objectColors = Object.entries(colors);
   <div class="component-container horizontal">
     {
       objectColors.map((color) => (
-        <div style="display:flex;gap:1rem;width:33.3334%">
+        <div class="color-item">
           <span
-            style={`border-radius:6px;display:block;width:60px;height:60px;background-color:${color[1]};`}
-          />
-          <div style="display:flex;flex-direction:column;">
+            class="color-item__color"
+            style={`background-color:${color[1]};`}
+          >
+            <Icon name="copy" />
+          </span>
+          <div class="color-item__text">
             <strong>{color[0]}</strong>
             <small>{color[1]}</small>
           </div>
@@ -34,4 +39,67 @@ const objectColors = Object.entries(colors);
       ))
     }
   </div>
+
+  <span class="copy-alert">Color copied</span>
 </Layout>
+
+<style is:inline>
+  .color-item {
+    display: flex;
+    gap: 1rem;
+    width: 33.3334%;
+    cursor: pointer;
+  }
+  .color-item__color {
+    border-radius: 6px;
+    display: block;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .color-item__color svg {
+    display: none;
+    color: #fff;
+  }
+  .color-item:hover .color-item__color svg {
+    display: block;
+  }
+  .color-item__text {
+    display: flex;
+    flex-direction: column;
+  }
+  .copy-alert {
+    opacity: 0;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    background-color: #f4f4f4;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    z-index: 1000;
+    transition: opacity 0.3s ease-in-out;
+  }
+  .copy-alert.copied {
+    opacity: 1;
+    display: block;
+  }
+</style>
+
+<script is:inline>
+  const colors = document.querySelectorAll(".color-item");
+  const copyAlert = document.querySelector(".copy-alert");
+
+  colors.forEach((color) => {
+    color.addEventListener("click", () => {
+      const code = color.querySelector(".color-item__text small").textContent;
+      navigator.clipboard.writeText(code);
+      copyAlert.classList.add("copied");
+
+      setTimeout(() => {
+        copyAlert.classList.remove("copied");
+      }, 2000);
+    });
+  });
+</script>
