@@ -31,6 +31,7 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check`                                   |
 | `npm run astro -- --help` | Get help using the Astro CLI                                                       |
 | `npm run test`            | Accessibility testing **(Required for generating test reports)**                   |
+| `npm run create:icons`    | Create library icons from folder `public/assets/icons`                             |
 
 ## Configuration File
 
@@ -41,8 +42,7 @@ The configuration file is located in the folder `/src/data/config.json`. In this
 ```json
 {
     "project": {
-        "name": "My Project",
-        //...
+        "name": "My Project"
     }
 }
 ```
@@ -52,7 +52,6 @@ The configuration file is located in the folder `/src/data/config.json`. In this
 ```json
 {
     "project": {
-        //...
         "darkmode": false
     }
 }
@@ -114,6 +113,19 @@ icon-name corresponds to the name of the .svg file you have added.
 ex: icon-name.svg 
 -->
 <Icon name="icon-name" />
+```
+**Icon props**
+
+| Property | Type    | Required | Description                                                                |
+|----------|---------|----------|----------------------------------------------------------------------------|
+| name     | string  | Yes      | The name of the icon to be used.                                           |
+| width    | number  | No       | The width of the icon. If not provided, the `size` value is used.          |
+| height   | number  | No       | The height of the icon. If not provided, the `size` value is used.         |
+| size     | number  | No       | The size of the icon. It is used if `width` and `height` are not provided. |
+
+```html
+<Icon name="icon-name" width={16} height={16} />
+<Icon name="icon-name" size={16} />
 ```
 
 ---
