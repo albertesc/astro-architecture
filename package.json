@@ -18,15 +18,15 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^2.3.1",
-    "@axe-core/playwright": "^4.9.0",
-    "astro": "^4.6.2",
-    "axe-html-reporter": "^2.2.3",
-    "svg-sprite": "^2.0.4"
+    "astro": "^4.6.2"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.9.0",
+    "axe-html-reporter": "^2.2.3",
     "@playwright/test": "^1.43.1",
     "@types/node": "^20.12.7",
-    "sass": "^1.75.0"
+    "sass": "^1.75.0",
+    "svg-sprite": "^2.0.4"
   },
   "license": "MIT"
 }

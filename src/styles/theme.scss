@@ -2,21 +2,17 @@
 
 :root {
     --background-body: #{variables.$white-color};
-
     --text-color: #{variables.$text-color};
     --text-inverted-color: #{variables.$text-inverted-color};
     --text-muted-color: #{variables.$text-muted-color};
-
     --border-color: #{variables.$border-color};
 }
 
 /* Only for darkmode */
 [data-theme="dark"] {
     --background-body: #{variables.$black-color};
-
-    --text-color: #{variables.$light-color};
+    --text-color: #{variables.$white-color};
     --text-inverted-color: #{variables.$text-color};
     --text-muted-color: #{variables.$light-color};
-
-    --border-color: #{variables.$light-color};
+    --border-color: #{variables.$white-color};
 }

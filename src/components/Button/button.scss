@@ -54,11 +54,13 @@
         color: var(--border-color);
 
         &:hover {
-            border-color: var(--border-color);
+            border-color: var(--black-color);
+            color: var(--black-color);
         }
 
         &:focus {
-            color: var(--border-color);
+            border-color: var(--black-color);
+            color: var(--black-color);
         }
     }
 }
