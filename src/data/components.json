@@ -4,13 +4,13 @@
             "name": "Colors",
             "path": "",
             "docs": "docs/colors",
-            "status": "in-progress"
+            "status": "done"
         },
         {
             "name": "Icons",
             "path": "",
             "docs": "docs/icons",
-            "status": "in-progress"
+            "status": "done"
         },
         {
             "name": "Button",
