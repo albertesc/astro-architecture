@@ -145,7 +145,7 @@ import Icon from '@components/Icon/icon.astro'
 
 The Icon component accepts the following properties:
 
-```javascript
+```js
 interface Props {
     /** The name of the icon to include */
     name: string;
@@ -161,9 +161,9 @@ interface Props {
 | Property | Type    | Required | Description                                                                |
 |----------|---------|----------|----------------------------------------------------------------------------|
 | name     | string  | Yes      | The name of the icon to be used.                                           |
+| size     | number  | No       | The size of the icon. It is used if `width` and `height` are not provided. |
 | width    | number  | No       | The width of the icon. If not provided, the `size` value is used.          |
 | height   | number  | No       | The height of the icon. If not provided, the `size` value is used.         |
-| size     | number  | No       | The size of the icon. It is used if `width` and `height` are not provided. |
 
 ```html
 ---
@@ -174,12 +174,6 @@ import Icon from '@components/Icon/icon.astro'
 <Icon name="icon-name" size={16} />
 ```
 
----
-
 ## Want to learn more about Astro?
 
 Feel free to check [astro documentation](https://docs.astro.build).
-
----
-
-Made with 🤍 by [Albert Escamilla](https://albertesc.dev).
