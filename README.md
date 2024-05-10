@@ -143,6 +143,21 @@ import Icon from '@components/Icon/icon.astro'
 
 **Props**
 
+The Icon component accepts the following properties:
+
+```javascript
+interface Props {
+    /** The name of the icon to include */
+    name: string;
+
+    /** Shorthand for setting width and height */
+    size?: number;
+    width?: number;
+    height?: number;
+}
+```
+
+
 | Property | Type    | Required | Description                                                                |
 |----------|---------|----------|----------------------------------------------------------------------------|
 | name     | string  | Yes      | The name of the icon to be used.                                           |
