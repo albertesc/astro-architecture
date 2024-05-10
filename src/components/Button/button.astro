@@ -8,33 +8,17 @@ interface Props {
 }
 
 const { tag, href, type = "primary" } = Astro.props;
+const Tag = tag;
 ---
 
-{
-  tag === "a" && (
-    <a
-      href={href}
-      class:list={[
-        "button",
-        { "button--primary": type === "primary" },
-        { "button--alternative": type === "alternative" },
-        { "button--ghost": type === "ghost" },
-      ]}
-    >
-      <slot />
-    </a>
-  )
-}{
-  tag === "button" && (
-    <button
-      class:list={[
-        "button",
-        { "button--primary": type === "primary" },
-        { "button--alternative": type === "alternative" },
-        { "button--ghost": type === "ghost" },
-      ]}
-    >
-      <slot />
-    </button>
-  )
-}
+<Tag
+  href={href}
+  class:list={[
+    "button",
+    { "button--primary": type === "primary" },
+    { "button--alternative": type === "alternative" },
+    { "button--ghost": type === "ghost" },
+  ]}
+>
+  <slot />
+</Tag>

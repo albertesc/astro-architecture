@@ -8,7 +8,7 @@ const pages = data.pages;
 
 fs.rmSync('public/accessibility', { recursive: true, force: true });
 
-test.describe('ACCESSIBILITY TEST LIGHT THEME', () => {
+test.describe('ACCESSIBILITY TEST', () => {
   for (const pageData of pages) {
     test(`should not have accessibility issues on page ${pageData.title}`, async ({ page }) => {
       const customSummary = `Test Case: Complete page analysis
