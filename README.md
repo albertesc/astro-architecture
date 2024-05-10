@@ -20,18 +20,16 @@ npm create astro@latest -- --template albertesc/astro-architecture
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                   | Action                                                                             |
-| :------------------------ | :--------------------------------------------------------------------------------- |
-| `npm install`             | Installs dependencies                                                              |
-| `npm run dev`             | Starts local dev server at `localhost:4321`                                        |
-| `npm run dev:host`        | Starts local dev server at `localhost:4321` with host `http://192.168.1.136:4321/` |
-| `npm run build`           | Build your production site to `./dist/`                                            |
-| `npm run build:test`      | Build your production site to `./dist/` with accessibility test                    |
-| `npm run preview`         | Preview your build locally, before deploying                                       |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check`                                   |
-| `npm run astro -- --help` | Get help using the Astro CLI                                                       |
-| `npm run test`            | Accessibility testing **(Required for generating test reports)**                   |
-| `npm run create:icons`    | Create library icons from folder `public/assets/icons`                             |
+| Command                   | Action                                                             |
+| :------------------------ | :----------------------------------------------------------------- |
+| `npm install`             | Installs dependencies                                              |
+| `npm run dev`             | Starts local dev server at `localhost:4321`                        |
+| `npm run dev:host`        | Starts local dev server at `localhost:4321` with host IP           |
+| `npm run build`           | Build your production site to `./dist/`                            |
+| `npm run build:test`      | Build your production site to `./dist/` with accessibility test    |
+| `npm run preview`         | Preview your build locally, before deploying                       |
+| `npm run test`            | Accessibility testing **(Required for generating test reports)**   |
+| `npm run create:icons`    | Create library icons from folder `public/assets/icons`             |
 
 ## Configuration File
 
@@ -61,7 +59,11 @@ The configuration file is located in the folder `/src/data/config.json`. In this
 
 ![index-page](https://github.com/albertesc/astro-architecture/blob/main/index-page.png)
 
-On the project's main screen, you will find a list that will serve as a guide to see the status of your project. In case you want to modify this information, you will find all the data in the folder `/srd/data/`. There are two `.json` documents where you can modify the state of your components and screens.
+On the project's main screen, you will find a list that will serve as a guide to see the status of your project. In case you want to modify this information, you will find all the data in the folder `src/data/`. There are `.json` documents where you can modify the state of your components, screens and more.
+
+### Add components
+
+Change this file from src/data/components.json
 
 ```json
 {
@@ -70,7 +72,13 @@ On the project's main screen, you will find a list that will serve as a guide to
             "name": "Colors",
             "path": "",
             "docs": "docs/colors",
-            "status": "in-progress"
+            "status": "done"
+        },
+        {
+            "name": "Icons",
+            "path": "",
+            "docs": "docs/icons",
+            "status": "done"
         },
         {
             "name": "Button",
@@ -81,6 +89,10 @@ On the project's main screen, you will find a list that will serve as a guide to
     ]
 }
 ```
+
+### Add pages
+
+Change this file from src/data/pages.json
 
 ```json
 {
@@ -97,24 +109,39 @@ On the project's main screen, you will find a list that will serve as a guide to
 }
 ```
 
+### Add project colors
+
+Change this file from src/data/colors.json
+
+```json
+{
+    "colors": {
+        "primary": "#D0315D",
+        "alternative": "#5E48E8"
+    }
+}
+```
+
 ## Icon component
 
-This architecture provides a simple way to create icons using the `<Icon />` component. To add icons, simply place the SVG files in the `/public/assets/icons/` folder and run the command:
+This architecture provides a simple way to create icons using the `Icon` component. To add icons, simply place the SVG files in the `/public/assets/icons/` folder and run the command:
 
 ```bash
 npm run create:icons
 ```
 
-Now you can use the `<Icon name="icon-name" />` component.
+You can use the `Icon` component by importing it from `@components/Icon/icon.astro` and rendering it as a normal Astro Component.
 
 ```html
-<!-- 
-icon-name corresponds to the name of the .svg file you have added. 
-ex: icon-name.svg 
--->
-<Icon name="icon-name" />
+---
+import Icon from '@components/Icon/icon.astro'
+---
+
+<!-- Embed the contents of the `/public/assets/icons/logo.svg` file -->
+<Icon name="logo" />
 ```
-**Icon props**
+
+**Props**
 
 | Property | Type    | Required | Description                                                                |
 |----------|---------|----------|----------------------------------------------------------------------------|
@@ -124,6 +151,10 @@ ex: icon-name.svg
 | size     | number  | No       | The size of the icon. It is used if `width` and `height` are not provided. |
 
 ```html
+---
+import Icon from '@components/Icon/icon.astro'
+---
+
 <Icon name="icon-name" width={16} height={16} />
 <Icon name="icon-name" size={16} />
 ```
