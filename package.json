@@ -10,21 +10,22 @@
     "test": "playwright test",
     "dev": "astro dev --open",
     "dev:host": "astro dev --host",
-    "build": "astro build && sass src/components/:dist/css/components/",
-    "build:test": "playwright test && astro build && sass src/components/:dist/css/components/",
+    "build": "astro build && sass src/components/:dist/css/components/ && sass src/pages/:dist/css/pages/",
+    "build:test": "playwright test && astro build && sass src/components/:dist/css/components/ && sass src/pages/:dist/css/pages/",
     "preview": "astro preview",
     "astro": "astro",
-    "create:icons": "svg-sprite --symbol --symbol-dest=public/assets/icons public/assets/icons/*.svg && node lib/create-icons-docs.cjs"
+    "create:icons": "node lib/create-icons-docs.cjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^2.3.1",
-    "astro": "^4.6.2"
+    "astro": "^4.6.2",
+    "astro-icon": "^1.1.0"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.9.0",
-    "axe-html-reporter": "^2.2.3",
     "@playwright/test": "^1.43.1",
     "@types/node": "^20.12.7",
+    "axe-html-reporter": "^2.2.3",
     "sass": "^1.75.0",
     "svg-sprite": "^2.0.4"
   },

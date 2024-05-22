@@ -3,19 +3,19 @@
         {
             "name": "Colors",
             "path": "",
-            "docs": "docs/colors",
+            "docs": "docs/colors.html",
             "status": "done"
         },
         {
             "name": "Icons",
             "path": "",
-            "docs": "docs/icons",
+            "docs": "docs/icons.html",
             "status": "done"
         },
         {
             "name": "Button",
             "path": "/src/components/Button/button.astro",
-            "docs": "docs/button",
+            "docs": "docs/button.html",
             "status": "in-progress"
         }
     ]

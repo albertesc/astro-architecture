@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
-
 import mdx from "@astrojs/mdx";
+
+import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
@@ -10,9 +11,14 @@ export default defineConfig({
     enabled: false
   },
   build: {
-    format: 'file',
+    format: 'preserve',
+    trailingSlash: 'never',
     inlineStylesheets: `never`,
-    assets: 'css'
+    assets: 'css',
+    assetsPrefix: {
+      'css': '../',
+      'fallback': '../'
+    }
   },
   vite: {
     build: {
@@ -24,7 +30,9 @@ export default defineConfig({
     shikiConfig: {
       theme: 'one-dark-pro',
       wrap: false
-    },
+    }
   },
-  integrations: [mdx()]
+  integrations: [mdx(), icon({
+    iconDir: "public/assets/icons",
+  })]
 });

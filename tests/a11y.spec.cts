@@ -14,11 +14,11 @@ test.describe('ACCESSIBILITY TEST', () => {
       const customSummary = `Test Case: Complete page analysis
         <br>Steps:</br>
         <ol style="margin: 0;padding-bottom:30px;">
-        <li>Open http://localhost:4321${pageData.slug}</li>
+        <li>Open http://localhost:4321/${pageData.slug}</li>
         <li>Analyze the entire page with all rules enabled</li>
         </ol>`;
 
-      await page.goto(`http://localhost:4321${pageData.slug}`);
+      await page.goto(`http://localhost:4321/${pageData.slug}`);
 
       const accessibilityScanResults = await new AxeBuilder({ page })
         .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
@@ -28,8 +28,8 @@ test.describe('ACCESSIBILITY TEST', () => {
         results: accessibilityScanResults,
         options: {
           customSummary,
-          reportFileName: `${pageData.file}.html`,
-          outputDir: 'public/accessibility',
+          reportFileName: "index.html",
+          outputDir: `public/accessibility/${pageData.pageName}`,
         },
       });
 

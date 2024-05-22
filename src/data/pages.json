@@ -2,9 +2,9 @@
   "pages": [
     {
       "title": "Home page",
-      "path": "/src/pages/home.astro",
-      "file": "home",
-      "slug": "/home",
+      "pageName": "home",
+      "path": "src/pages/home.astro",
+      "slug": "home/index.html",
       "status": "in-progress",
       "accessibility": true
     }
