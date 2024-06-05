@@ -10,8 +10,8 @@
     "test": "playwright test",
     "dev": "astro dev --open",
     "dev:host": "astro dev --host",
-    "build": "astro build && sass src/components/:dist/css/components/ && sass src/pages/:dist/css/pages/",
-    "build:test": "playwright test && astro build && sass src/components/:dist/css/components/ && sass src/pages/:dist/css/pages/",
+    "build": "astro build && sass src/components/:dist/_components/ && sass src/pages/:dist/",
+    "build:test": "playwright test && astro build && sass src/components/:dist/_components/ && sass src/pages/:dist/",
     "preview": "astro preview",
     "astro": "astro",
     "create:icons": "node lib/create-icons-docs.cjs"

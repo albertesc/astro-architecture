@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import mdx from "@astrojs/mdx";
+import path from 'path';
 
 import icon from "astro-icon";
 
@@ -14,7 +15,7 @@ export default defineConfig({
     format: 'preserve',
     trailingSlash: 'never',
     inlineStylesheets: `never`,
-    assets: 'css',
+    assets: 'assets',
     assetsPrefix: {
       'css': '../',
       'fallback': '../'
@@ -22,8 +23,21 @@ export default defineConfig({
   },
   vite: {
     build: {
-      minify: true,
-      cssCodeSplit: false
+      minify: false,
+      cssCodeSplit: false,
+      assetsInlineLimit: 0,
+      rollupOptions: {
+        output: {
+          entryFileNames: chunk => {
+            const dir = path.dirname(chunk.moduleIds[0]);
+            const basename = path.basename(dir).toLocaleLowerCase();
+
+            if(chunk.moduleIds[0].includes('/pages/')) return `${basename}/${basename}.js`;
+            return `_components/${basename}/${basename}.js`;
+          },
+          assetFileNames: 'style.css',
+        }
+      }
     }
   },
   markdown: {
