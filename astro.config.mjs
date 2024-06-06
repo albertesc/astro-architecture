@@ -35,7 +35,6 @@ export default defineConfig({
             if(chunk.moduleIds[0].includes('/pages/')) return `${basename}/${basename}.js`;
             return `_components/${basename}/${basename}.js`;
           },
-          assetFileNames: 'style.css',
         }
       }
     }
